@@ -42,21 +42,12 @@
             <button><span onclick="playSound('command7.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd7', this)" id="cmd7">YEMEK - FOOD</span></button>
             <button><span onclick="playSound('command8.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd8', this)" id="cmd8">YAT - LAY</span></button>
             
-            <!-- [GÜNCELLEME] Boşluk olan 9. butona sadece YATAK eklendi -->
-            <button><span onclick="playSound('command9.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd9', this)" id="cmd9">YATAK - GO BACK TO YOUR BED</span></button>
+            <button><span onclick="playSound('command9.mp3?v=2')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd9', this)" id="cmd9">YATAK - GO BACK TO YOUR BED</span></button>
             <button><span onclick="playSound('command10.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd10', this)" id="cmd10">HAYIR - NO</span></button>
             <button><span onclick="playSound('command11.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd11', this)" id="cmd11">ÇIK - GO OUT</span></button>
-            <button><span onclick="playSound('command12.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd12', this)" id="cmd12">TOUCH</span></button>
-            
+            <button><span onclick="playSound('command 12.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd12', this)" id="cmd12">TOUCH</span></button>
+
             <button><span onclick="playSound('command13.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd13', this)" id="cmd13">BEKLE - WAIT</span></button>
-            <button><span onclick="playSound('command14.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd14', this)" id="cmd14">Command 14</span></button>
-            <button><span onclick="playSound('command15.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd15', this)" id="cmd15">Command 15</span></button>
-            <button><span onclick="playSound('command16.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd16', this)" id="cmd16">Com"mand 16</span></button>
-            
-            <button><span onclick="playSound('command17.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd17', this)" id="cmd17">Command 17</span></button>
-            <button><span onclick="playSound('command18.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd18', this)" id="cmd18">Command 18</span></button>
-            <button><span onclick="playSound('command19.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd19', this)" id="cmd19">RIGHT</span></button>
-            <button><span onclick="playSound('command20.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd20', this)" id="cmd20">LEFT</span></button>
         </div>
 
         <div class="schedule-section">
@@ -79,7 +70,14 @@ Kalk is to make her move - - - when she is laying, different than come she has t
 
     <script>
         window.onload = function() {
-            for(let i=1; i<=20; i++) {
+            // Migrate the old saved cmd9 label so YATAK does not disappear after load.
+            const commandNameVersion = '2026-07-23-yatak-v1';
+            if (localStorage.getItem('muciCommandNameVersion') !== commandNameVersion) {
+                localStorage.setItem('cmd9', 'YATAK - GO BACK TO YOUR BED');
+                localStorage.setItem('muciCommandNameVersion', commandNameVersion);
+            }
+
+            for(let i=1; i<=13; i++) {
                 let savedName = localStorage.getItem('cmd' + i);
                 if(savedName) document.getElementById('cmd' + i).innerText = savedName;
             }
