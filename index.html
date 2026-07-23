@@ -42,9 +42,12 @@
             <button><span onclick="playSound('command8.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd8', this)" id="cmd8">HOP - JUMP</span></button>
             <button><span onclick="playSound('command9.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd9', this)" id="cmd9">İN - GO DOWN</span></button>
             <button><span onclick="playSound('command10.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd10', this)" id="cmd10">ÇIK - GO OUT</span></button>
-            <button><span onclick="playSound('command11.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd11', this)" id="cmd11">Command 11</span></button>
-            <button><span onclick="playSound('command12.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd12', this)" id="cmd12">Command 12</span></button>
-            <button><span onclick="playSound('command13.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd13', this)" id="cmd13">Command 13</span></button>
+            <button><span onclick="playSound('command11.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd11', this)" id="cmd11">YATAK- GO BACK TO YOUR BED</span></button>
+            
+            <!-- **[GÜNCELLEME] 12. ve 13. Komutlar eklendi** -->
+            <button><span onclick="playSound('command12.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd12', this)" id="cmd12">TOUCH</span></button>
+            <button><span onclick="playSound('command13.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd13', this)" id="cmd13">KALK - STAND UP</span></button>
+            
             <button><span onclick="playSound('command14.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd14', this)" id="cmd14">Command 14</span></button>
             <button><span onclick="playSound('command15.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd15', this)" id="cmd15">Command 15</span></button>
             <button><span onclick="playSound('command16.mp3')">▶</span> <span class="cmd-name" contenteditable="true" onblur="saveName('cmd16', this)" id="cmd16">Command 16</span></button>
@@ -56,7 +59,6 @@
 
         <div class="schedule-section">
             <h2>📅 Daily Schedule</h2>
-            <!-- **[GÜNCELLEME] İki fotoğrafın da hata vermeden alt alta görünebilmesi için alan genişletildi** -->
             <img src="schedule.jpg" alt="Daily Schedule 1" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Please+add+schedule.jpg+to+the+folder'">
             <img src="schedule2.jpg" alt="Daily Schedule 2" style="margin-top: 15px;" onerror="this.style.display='none'">
         </div>
@@ -64,7 +66,14 @@
         <div class="notes-section">
             <h2>📝 Important Notes</h2>
             <p style="margin-top: 0;">Leave any specific instructions about food, walks, or vet contacts below:</p>
-            <textarea class="notes-textarea" id="muciNotes" onblur="saveNotes()" placeholder="Type notes here...">YEMEK - FOOD command is for her to start eating after you prepared her food. She has to/she waits for the command.</textarea>
+            
+            <!-- **[GÜNCELLEME] "Touch" ve "Kalk" açıklamaları eklendi** -->
+            <textarea class="notes-textarea" id="muciNotes" onblur="saveNotes()" placeholder="Type notes here...">YEMEK - FOOD command is for her to start eating after you prepared her food. She has to/she waits for the command.
+You can every time support your command with a snap after 1-2 seconds if she hasn't reacted already.
+Commands like sit wait and lay: You have seen my hand
+- wait is like stop sign - - - sit is like point finger up the rest down - - - lay is like your palm looks to the ground and goes down a bit with your command.
+Touch is for gaming indeed as you have seen but it works better than her name sometimes to gain her attention back.
+Kalk is to make her move - - - when she is laying, different than come she has to just stand up... :)</textarea>
         </div>
     </div>
 
